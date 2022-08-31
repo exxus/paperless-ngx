@@ -207,6 +207,16 @@ Install Paperless from Docker Hub
     most important change is to set ``USERMAP_UID`` and ``USERMAP_GID``
     to the uid and gid of your user on the host system. Use ``id -u`` and
     ``id -g`` to get these.
+    
+    You can also set the correct uid for the broker and if avaialable the data container, in this example the uid is 1000:
+    
+    .. code::
+    
+      broker:
+        user: "1000:1000"
+
+      db:
+        user: "1000:1000"
 
     This ensures that
     both the docker container and you on the host machine have write access
